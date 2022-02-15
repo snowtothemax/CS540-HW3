@@ -13,7 +13,7 @@ def get_covariance(dataset):
     return np.cov(dataset)
 
 def get_eig(S, m):
-    w,v = eigh(S,subset_by_index=[1024-m,1023])
+    w,v = eigh(S, subset_by_index=[len(S)-m,len(S)-1])
 
     # flip ascending
     w = np.fliplr(w)
